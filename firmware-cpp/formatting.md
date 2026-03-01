@@ -53,6 +53,15 @@ comments.
 - Keep comment lines readable and wrap manually when needed.
 - Avoid long, single-line comments that exceed the column limit.
 
+Comment content guidance:
+
+- Use comments to explain constraints, invariants, and "why" (not what the code obviously does).
+- Use all-caps acronyms in comments when they are domain-standard: `SPI`, `UART`, `IRQ`, `DMA`.
+- For a small but non-obvious function, a short comment at the function can explain intent.
+- For a large/long function, prefer short comments per chunk/section of code inside the function.
+- If the codebase already uses a doc-comment system (Doxygen, etc.), follow that convention. Do not
+  introduce a new one just for this guide.
+
 ## Generated / Vendor Code
 
 - Do not reformat generated or vendor-managed files unless you own the generator/template.
