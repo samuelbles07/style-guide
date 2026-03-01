@@ -135,8 +135,8 @@ Example (explicit context in C):
 ```c
 typedef struct {
   uintptr_t base_addr;
-} uart_t;
+} UART;
 
-void uart_init(uart_t* uart);
-int uart_write(uart_t* uart, const uint8_t* data, size_t size);
+void uart_init(UART* uart);
+int uart_write(UART* uart, const uint8_t* data, size_t size);
 ```

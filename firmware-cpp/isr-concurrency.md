@@ -51,16 +51,16 @@ Use critical sections to protect short sequences that must be atomic with respec
 Example (platform abstraction):
 
 ```cpp
-class IrqLock {
+class IRQLock {
  public:
-  IrqLock();
-  ~IrqLock();
-  IrqLock(const IrqLock&) = delete;
-  IrqLock& operator=(const IrqLock&) = delete;
+  IRQLock();
+  ~IRQLock();
+  IRQLock(const IRQLock&) = delete;
+  IRQLock& operator=(const IRQLock&) = delete;
 };
 
 void enqueue_byte(uint8_t b) {
-  IrqLock lock;
+  IRQLock lock;
   // update shared ring buffer indices
 }
 ```

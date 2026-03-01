@@ -40,9 +40,9 @@ extern "C" {
 
 typedef struct {
   uint32_t baud_rate_hz;
-} uart_config_t;
+} UARTConfig;
 
-bool uart_init(const uart_config_t* config);
+bool uart_init(const UARTConfig* config);
 
 #ifdef __cplusplus
 }

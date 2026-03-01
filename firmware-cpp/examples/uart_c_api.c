@@ -1,9 +1,9 @@
 #include "uart_c_api.h"
 
-static UartRxCallback g_rx_cb;
+static UARTRxCallback g_rx_cb;
 static void *g_rx_context;
 
-bool uart_init(Uart *uart, const UartConfig *config) {
+bool uart_init(UART *uart, const UARTConfig *config) {
   if ((uart == NULL) || (config == NULL)) {
     return false;
   }
@@ -21,7 +21,7 @@ bool uart_init(Uart *uart, const UartConfig *config) {
   return true;
 }
 
-size_t uart_write(Uart *uart, const uint8_t *data, size_t size) {
+size_t uart_write(UART *uart, const uint8_t *data, size_t size) {
   if ((uart == NULL) || (data == NULL)) {
     return 0u;
   }
@@ -34,7 +34,7 @@ size_t uart_write(Uart *uart, const uint8_t *data, size_t size) {
   return size;
 }
 
-void uart_set_rx_callback(Uart *uart, UartRxCallback cb, void *context) {
+void uart_set_rx_callback(UART *uart, UARTRxCallback cb, void *context) {
   (void)uart;
   g_rx_cb = cb;
   g_rx_context = context;

@@ -14,7 +14,7 @@ Avoid names reserved by the C/C++ standards and common toolchains.
 Examples:
 
 ```cpp
-class SpiBus {
+class SPIBus {
  public:
   void init();
 
@@ -82,7 +82,7 @@ Examples:
 ```cpp
 void enable_irq();
 
-class Uart {
+class UART {
  public:
   void write_bytes(const uint8_t* data, size_t size);
 
@@ -131,7 +131,7 @@ Examples:
 ```cpp
 inline constexpr uint32_t CPU_CLOCK_HZ = 48'000'000u;
 
-class Adc {
+class ADC {
  public:
   static constexpr uint16_t MAX_COUNTS = 4095;
 };

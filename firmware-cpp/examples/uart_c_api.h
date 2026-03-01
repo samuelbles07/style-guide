@@ -13,26 +13,26 @@ extern "C" {
 
 typedef struct {
   uintptr_t base_addr;
-} Uart;
+} UART;
 
 typedef struct {
   uint32_t baud_hz;
-} UartConfig;
+} UARTConfig;
 
-typedef void (*UartRxCallback)(void *context, const uint8_t *data, size_t size);
+typedef void (*UARTRxCallback)(void *context, const uint8_t *data, size_t size);
 
 // ISR-safe: no
 // Blocking: no
 // Allocates: no
-bool uart_init(Uart *uart, const UartConfig *config);
+bool uart_init(UART *uart, const UARTConfig *config);
 
 // ISR-safe: no
 // Blocking: yes (may wait for space)
 // Allocates: no
-size_t uart_write(Uart *uart, const uint8_t *data, size_t size);
+size_t uart_write(UART *uart, const uint8_t *data, size_t size);
 
 // Callback may be invoked from ISR context (implementation-defined).
-void uart_set_rx_callback(Uart *uart, UartRxCallback cb, void *context);
+void uart_set_rx_callback(UART *uart, UARTRxCallback cb, void *context);
 
 #ifdef __cplusplus
 }
