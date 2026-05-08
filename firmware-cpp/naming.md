@@ -117,6 +117,34 @@ class RingBuffer {
 };
 ```
 
+## Short Variable Names
+
+Short names are acceptable when the scope and meaning are immediately obvious.
+
+Examples include:
+- loop indices (`i`, `j`)
+- coordinates (`x`, `y`)
+- lengths (`len`)
+- buffers (`buf`)
+- transmit/receive (`tx`, `rx`)
+- temporary aliases in very small scopes
+
+Avoid short or abbreviated names for variables that:
+- participate in business/domain logic
+- represent state transitions
+- carry protocol meaning
+- survive across large scopes
+- are mutated across multiple operations
+
+Prefer descriptive names for semantic values.
+
+Good:
+
+```cpp
+bool has_notification;
+SensorGroup requested_groups;
+uint32_t retry_count;
+
 ## Constants
 
 ### C++
